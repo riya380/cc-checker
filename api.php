@@ -55,8 +55,8 @@ $postcode = $matches1[1][0];
 
 ////////////////////////////===[Luminati Details]
 
-$username = 'Put Zone Username Here';
-$password = 'Put Zone Password Here';
+$username = 'aman';
+$password = 'aman';
 $port = 22225;
 $session = mt_rand();
 $super_proxy = 'zproxy.lum-superproxy.io';
@@ -70,18 +70,25 @@ $ch = curl_init();
 // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
 ////////=========Socks Proxy
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-curl_setopt($ch, CURLOPT_URL, ' '); 
+curl_setopt($ch, CURLOPT_URL, 'https://api.curiositystream.com/v1/register/ '); 
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'accept: ', 
-'accept-encoding: ',
-'content-type: ',
-'origin: ',
-'referer: ',
+'authority: api.curiositystream.com', 
+'accept: application/json, text/plain, */*', 
+'accept-encoding: gzip, deflate, br',
+'content-type: application/json;charset=UTF-8',
+'set-cookie: __cfduid=d320500f7927a54170bfe587c0c3bd55e1590053767; expires=Sat, 20-Jun-20 09:36:07 GMT; path=/; domain=.curiositystream.com; HttpOnly; SameSite=Lax
+set-cookie: cs_session=56f6df0b206550b7e047c199e188634e7bf71b06; expires=Fri, 22-May-2020 09:36:09 GMT; Max-Age=86400; path=/; domain=.curiositystream.com
+set-cookie: AWSELB=0D277D9714E95E051B312DC0FCC4C8B40B2F32C09257D157FCA03A658713EA794B21F557863607200AA0E94DB30D2036794A8189A7C6E9CD0CF0D357408EE3C12C76254EC8;PATH=/;MAX-AGE=10
+set-cookie: AWSELBCORS=0D277D9714E95E051B312DC0FCC4C8B40B2F32C09257D157FCA03A658713EA794B21F557863607200AA0E94DB30D2036794A8189A7C6E9CD0CF0D357408EE3C12C76254EC8;PATH=/;MAX-AGE=10;SECURE;SAMESITE=None
+status: 422
+'origin: https://curiositystream.com',
+'referer:https://curiositystream.com/signup ',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
-//'user-agent: #'));
+//'user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 #',
+));
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
@@ -101,7 +108,7 @@ $result = curl_exec($ch);
 // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
 // ////////=========Socks Proxy
 // //curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-curl_setopt($ch, CURLOPT_URL, ' ');
+curl_setopt($ch, CURLOPT_URL, 'https://api.curiositystream.com/v1/register/ ');
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -109,14 +116,19 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept: ',
-'content-type: ',
-'Cookie: ',
-'Host: ',
-'Origin: ',
-'Referer: ',
+'content-type: application/json;charset=UTF-8',
+'Authority: api.curiositystream.com',
+'Cookie:'set-cookie: __cfduid=d320500f7927a54170bfe587c0c3bd55e1590053767; expires=Sat, 20-Jun-20 09:36:07 GMT; path=/; domain=.curiositystream.com; HttpOnly; SameSite=Lax
+set-cookie: cs_session=56f6df0b206550b7e047c199e188634e7bf71b06; expires=Fri, 22-May-2020 09:36:09 GMT; Max-Age=86400; path=/; domain=.curiositystream.com
+set-cookie: AWSELB=0D277D9714E95E051B312DC0FCC4C8B40B2F32C09257D157FCA03A658713EA794B21F557863607200AA0E94DB30D2036794A8189A7C6E9CD0CF0D357408EE3C12C76254EC8;PATH=/;MAX-AGE=10
+set-cookie: AWSELBCORS=0D277D9714E95E051B312DC0FCC4C8B40B2F32C09257D157FCA03A658713EA794B21F557863607200AA0E94DB30D2036794A8189A7C6E9CD0CF0D357408EE3C12C76254EC8;PATH=/;MAX-AGE=10;SECURE;SAMESITE=None
+'Origin: https://curiositystream.com',
+'Referer: https://curiositystream.com/signup',
 'Sec-Fetch-Mode: cors',
+//'user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 #',
 ));
 curl_setopt($ch, CURLOPT_POSTFIELDS, ' ');
+{"referral_source":[{"contact_date":"2020-05-21T14:59:45+05:30","count":1,"referrer":"https://www.google.com/","tags":[{"tag":"clientId","value":"1266910197.1589109857"},{"tag":"page","value":"/"},{"tag":"experiment_id","value":"kIXPGv3NTOGo1VB_PaWzQw-0"}]}],"referral_code":"","email":"$","password":"$","first_name":"$","last_name":"$","zip_code":"17025","country":"US","stripeToken":"tok_1GlAoqIbys3PwYEzmmr70FG5","plan":"HDS","coupon":"","recaptchaToken":"03AGdBq24f8vPEyw43t5LFCM-dI6QG0bPVFAAjMkC2Bh3X7SvZkyjGu34JMRJcQPTJdKWZnYI7O1UvjXzsYc5G_JM1fjXtJCI30bvX9VDdK5eRSpASePLdNv_hVkJKFYbackXRCSGvrauYnRLpFdv-a4L7nkuggZX0AYZ0xnx94ZvPKqoxUQRF2ZEt-VjGbAVwRpUcrPkoPSl4Qi8m4E7osq9oQbNR8GFXol51ZbilQwLKCdpFZy1HBKPK5JWNlWF44kiUE3PTuL4WoWwEmwrPI8EPKig2UMdLyEK2doEizUzNkGKR1iHBUewDIoV1eNGJFJ-ezvZmKswykZrq-QkZKE5yiWKZKDnA3qAELzmp1huQICQHkgrew21TWqJw0FUCFINz7SGtg1O0tx8jO2hEKbnvhPQsMqp90Q"}
 
 $result = curl_exec($ch);*/
 $message = trim(strip_tags(getStr($result,'"message":"','"'))); 
